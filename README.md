@@ -14,7 +14,7 @@ See migration guides in `MIGRATION.md`.
 
 See a Swift example app in `Examples/`.
 
-To run the example app, clone this repository, add your publishable "YOUR-SDK-KEY" & "YOUR-SECRET" key in `AppDelegate.m`, and build the app.
+To run the example app, clone this repository, add your publishable "YOUR-SDK-KEY" & "YOUR-SECRET" key in `AppDelegate.swift`, and build the app.
 
 ## Support
 
