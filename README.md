@@ -1,4 +1,4 @@
-![GeoSpark](https://raw.githubusercontent.com/geosparklabs/geospark-ios-sdk/master/logo.png?v=3)
+![GeoSpark](https://raw.githubusercontent.com/geosparklabs/geospark-sdk-ios/master/logo.png?v=3)
 
 [GeoSpark](https://geospark.co) is the location intelligence platform.
 
