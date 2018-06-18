@@ -1,14 +1,12 @@
 ![GeoSpark](https://raw.githubusercontent.com/geosparklabs/geospark-sdk-ios/master/logo.png?v=3)
 
+[![Pod version](https://badge.fury.io/co/GeoSpark.svg)](https://badge.fury.io/co/GeoSpark)
+
 [GeoSpark](https://geospark.co) is the location intelligence platform.
 
 ## Documentation
 
 See the full documentation [here](https://geospark.co/docs/ios).
-
-## Migrating
-
-See migration guides in `MIGRATION.md`.
 
 ## Examples
 
