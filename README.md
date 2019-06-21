@@ -6,7 +6,7 @@
 
 ## Documentation
 
-See the full documentation [here](https://geospark.co/docs/ios).
+See the full documentation [here](https://docs.geospark.co/ios).
 
 ## Examples
 
