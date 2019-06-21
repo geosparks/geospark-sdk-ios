@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.social_media_url      = 'https://twitter.com/geosparkai'
   s.author                = { 'GeoSpark, Inc.' => 'support@geospark.co' }
   s.platform              = :ios
-  s.source                = { :git => 'https://github.com/geosparks/geospark-ios-sdk.git', :tag => s.version.to_s }
+  s.source                = { :git => 'https://github.com/geosparks/geospark-sdk-ios.git', :tag => s.version.to_s }
   s.source_files          = 'GeoSparkSDK/GeoSpark.framework/Headers/*.h'
   s.vendored_frameworks   = 'GeoSparkSDK/GeoSpark.framework'
   s.module_map            = "GeoSparkSDK/GeoSpark.framework/Modules/module.modulemap"
