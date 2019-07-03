@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8mL-Sw-e0g">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GeoSparkExample-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="GeoSparkExample" id="BYZ-38-t0r" customClass="ViewController" customModule="GeoSparkExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4gN-KQ-QhT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fAx-6y-lRg">
+                                <rect key="frame" x="20" y="104" width="335" height="156"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter description" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGn-ZQ-SOb">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="33"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="oBj-Vb-eFZ"/>
+                                        </connections>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-QM-CJZ">
+                                        <rect key="frame" x="0.0" y="41" width="335" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKO-PX-kWE">
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="33"/>
+                                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                                <state key="normal" title="Create User">
+                                                    <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="createUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d5W-HG-bTw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imj-Sv-aQV">
+                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="33"/>
+                                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                                <state key="normal" title="Set Desciption">
+                                                    <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="setDescription:" destination="BYZ-38-t0r" eventType="touchUpInside" id="etu-qA-bpV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter userId" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bYy-J3-hi3">
+                                        <rect key="frame" x="0.0" y="82" width="335" height="33"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="gH9-us-tyH"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcp-TR-MlL">
+                                        <rect key="frame" x="0.0" y="123" width="335" height="33"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="getUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O29-0h-LIU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-Lt-c9E">
+                                <rect key="frame" x="20" y="313" width="335" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="647-bu-EP1">
+                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="33"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title=" Start Tracking ">
+                                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="StartTracking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZtX-TR-bev"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWT-fD-ygs">
+                                        <rect key="frame" x="177.5" y="0.0" width="157.5" height="33"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title=" Stop Tracking ">
+                                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="stopTracking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QgJ-BO-XxM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6BL-mc-Kfi">
+                                <rect key="frame" x="20" y="356" width="335" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="33" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug2-Ww-eAD">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="33"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Trips">
+                                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="trips:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V3I-V6-3Qw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bvQ-gs-cnu">
+                                <rect key="frame" x="20" y="399" width="335" height="139"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-2z-oNN">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="33" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dns-Rt-gEB">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="33"/>
+                                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                                <state key="normal" title="Get Current Location">
+                                                    <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="currentLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QhU-5I-KIa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="33" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNE-9o-8Pw">
+                                        <rect key="frame" x="0.0" y="53" width="335" height="33"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Update Current Location">
+                                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="updatedLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="73d-1R-qFs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="33" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zns-Sa-vKx">
+                                        <rect key="frame" x="0.0" y="106" width="335" height="33"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVW-p7-74W"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="P18-x0-awm">
+                                <rect key="frame" x="20" y="270" width="335" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxm-ft-SoT">
+                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="33"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Request Location">
+                                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="requestLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OZk-uM-t8N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za6-6o-Vqw">
+                                        <rect key="frame" x="177.5" y="0.0" width="157.5" height="33"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Request Motion">
+                                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="requestMotion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LEn-yZ-Z3d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="G3f-O1-9aL" firstAttribute="trailing" secondItem="fAx-6y-lRg" secondAttribute="trailing" constant="20" id="0Cp-Sf-auC"/>
+                            <constraint firstItem="JnE-Lt-c9E" firstAttribute="top" secondItem="P18-x0-awm" secondAttribute="bottom" constant="10" id="14R-8G-EKM"/>
+                            <constraint firstItem="6BL-mc-Kfi" firstAttribute="trailing" secondItem="JnE-Lt-c9E" secondAttribute="trailing" id="1Ke-nJ-4Jj"/>
+                            <constraint firstItem="fAx-6y-lRg" firstAttribute="top" secondItem="G3f-O1-9aL" secondAttribute="top" constant="40" id="2xf-4I-I5F"/>
+                            <constraint firstItem="fAx-6y-lRg" firstAttribute="leading" secondItem="G3f-O1-9aL" secondAttribute="leading" constant="20" id="3T7-Rg-6iH"/>
+                            <constraint firstItem="P18-x0-awm" firstAttribute="trailing" secondItem="fAx-6y-lRg" secondAttribute="trailing" id="5Jc-gP-qSv"/>
+                            <constraint firstItem="JnE-Lt-c9E" firstAttribute="trailing" secondItem="P18-x0-awm" secondAttribute="trailing" id="7og-dA-Sgo"/>
+                            <constraint firstItem="bvQ-gs-cnu" firstAttribute="top" secondItem="6BL-mc-Kfi" secondAttribute="bottom" constant="10" id="8gR-v7-3zx"/>
+                            <constraint firstItem="bvQ-gs-cnu" firstAttribute="leading" secondItem="6BL-mc-Kfi" secondAttribute="leading" id="94a-2w-fOD"/>
+                            <constraint firstItem="P18-x0-awm" firstAttribute="leading" secondItem="fAx-6y-lRg" secondAttribute="leading" id="Crw-Zh-Fu5"/>
+                            <constraint firstItem="6BL-mc-Kfi" firstAttribute="top" secondItem="JnE-Lt-c9E" secondAttribute="bottom" constant="10" id="QfD-vn-67h"/>
+                            <constraint firstItem="6BL-mc-Kfi" firstAttribute="leading" secondItem="JnE-Lt-c9E" secondAttribute="leading" id="iPJ-Jj-Hsk"/>
+                            <constraint firstItem="bvQ-gs-cnu" firstAttribute="trailing" secondItem="6BL-mc-Kfi" secondAttribute="trailing" id="vY9-z9-uZ1"/>
+                            <constraint firstItem="JnE-Lt-c9E" firstAttribute="leading" secondItem="P18-x0-awm" secondAttribute="leading" id="x4D-yg-wVy"/>
+                            <constraint firstItem="P18-x0-awm" firstAttribute="top" secondItem="fAx-6y-lRg" secondAttribute="bottom" constant="10" id="yCI-En-sH5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G3f-O1-9aL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GZ3-7r-Apv"/>
+                    <connections>
+                        <outlet property="createUserButton" destination="cKO-PX-kWE" id="sB8-jF-4Et"/>
+                        <outlet property="getUserButton" destination="Xcp-TR-MlL" id="xNB-T5-VPU"/>
+                        <outlet property="logoutButton" destination="Zns-Sa-vKx" id="Z9X-ep-Dl9"/>
+                        <outlet property="requestLocationButton" destination="Qxm-ft-SoT" id="XrN-ho-JIj"/>
+                        <outlet property="requestMotionButton" destination="za6-6o-Vqw" id="Mp7-Kg-f7c"/>
+                        <outlet property="setDescriptionButton" destination="Imj-Sv-aQV" id="Dcl-v8-qz8"/>
+                        <outlet property="showCurrentLocationButton" destination="dns-Rt-gEB" id="vSg-8D-a0R"/>
+                        <outlet property="startTrackingButton" destination="647-bu-EP1" id="8Rk-0U-OVj"/>
+                        <outlet property="stopTrackingButton" destination="CWT-fD-ygs" id="N1Q-7D-l8k"/>
+                        <outlet property="tripsButton" destination="Ug2-Ww-eAD" id="SmV-5l-Cu3"/>
+                        <outlet property="updatedLocation" destination="KNE-9o-8Pw" id="xcW-EV-dWq"/>
+                        <outlet property="userDescField" destination="CGn-ZQ-SOb" id="Rcy-rf-DZH"/>
+                        <outlet property="userIdField" destination="bYy-J3-hi3" id="WHq-X5-7Hh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031" y="-118"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="qjM-CQ-Gv0">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="bWY-Sy-7sY" customClass="MapViewController" customModule="GeoSparkExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfk-lX-CFw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ljE-2o-2Ik">
+                                <rect key="frame" x="0.0" y="20" width="375" height="607"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bWY-Sy-7sY" id="Oy1-zb-bhF"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ues-SV-6Sz">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bBB-Qz-Pcl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Select Date">
+                                    <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectDate" destination="bWY-Sy-7sY" eventType="touchUpInside" id="bfT-1h-37L"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ljE-2o-2Ik" firstAttribute="top" secondItem="WEu-1P-vzv" secondAttribute="top" id="AGo-la-Sn6"/>
+                            <constraint firstItem="Ues-SV-6Sz" firstAttribute="top" secondItem="ljE-2o-2Ik" secondAttribute="bottom" id="GDA-ZU-mlI"/>
+                            <constraint firstItem="ljE-2o-2Ik" firstAttribute="leading" secondItem="WEu-1P-vzv" secondAttribute="leading" id="Jr4-iG-G2m"/>
+                            <constraint firstItem="WEu-1P-vzv" firstAttribute="trailing" secondItem="Ues-SV-6Sz" secondAttribute="trailing" id="OGY-sG-33g"/>
+                            <constraint firstItem="Ues-SV-6Sz" firstAttribute="leading" secondItem="WEu-1P-vzv" secondAttribute="leading" id="bQV-Tg-pBP"/>
+                            <constraint firstItem="WEu-1P-vzv" firstAttribute="bottom" secondItem="Ues-SV-6Sz" secondAttribute="bottom" id="eaH-0c-BzM"/>
+                            <constraint firstItem="ljE-2o-2Ik" firstAttribute="trailing" secondItem="WEu-1P-vzv" secondAttribute="trailing" id="hY3-w3-WGS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WEu-1P-vzv"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ljE-2o-2Ik" id="eY7-dI-3RB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSy-td-Ial" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2357.5999999999999" y="-118.29085457271366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LIh-Ko-GYe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8mL-Sw-e0g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7fX-cT-7Ii">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Bgl-vt-aKY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V8U-jE-fpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297.60000000000002" y="-117.84107946026987"/>
+        </scene>
+        <!--Trip View Controller-->
+        <scene sceneID="pGs-D6-ejo">
+            <objects>
+                <viewController storyboardIdentifier="TripViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MWC-Hc-HZb" customClass="TripViewController" customModule="GeoSparkExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lsd-LK-w99">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gs1-SB-Xrv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MWC-Hc-HZb" id="qLE-yl-At4"/>
+                                    <outlet property="delegate" destination="MWC-Hc-HZb" id="cBr-pl-EF1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gs1-SB-Xrv" firstAttribute="top" secondItem="LaY-GQ-Gss" secondAttribute="top" id="4br-Kz-Fxl"/>
+                            <constraint firstItem="gs1-SB-Xrv" firstAttribute="bottom" secondItem="LaY-GQ-Gss" secondAttribute="bottom" id="Ooa-hG-dgL"/>
+                            <constraint firstAttribute="trailing" secondItem="gs1-SB-Xrv" secondAttribute="trailing" id="VTY-8B-heq"/>
+                            <constraint firstAttribute="bottom" secondItem="gs1-SB-Xrv" secondAttribute="bottom" id="esE-Oe-sc8"/>
+                            <constraint firstItem="gs1-SB-Xrv" firstAttribute="leading" secondItem="LaY-GQ-Gss" secondAttribute="leading" id="tBX-vQ-B2I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LaY-GQ-Gss"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="gs1-SB-Xrv" id="AuL-DO-vDV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4L8-le-JZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2055" y="-892"/>
+        </scene>
+        <!--Get Current Location View Controller-->
+        <scene sceneID="fgT-XO-vda">
+            <objects>
+                <viewController storyboardIdentifier="GetCurrentLocationViewController" id="khR-JP-gSR" customClass="GetCurrentLocationViewController" customModule="GeoSparkExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kzt-Sl-lCm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pMt-Da-amm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4R-gt-jvk">
+                                        <rect key="frame" x="162.5" y="0.0" width="50" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="e0g-1Y-0r6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzW-ck-ul1">
+                                        <rect key="frame" x="162.5" y="40" width="50" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="KcE-uQ-fa7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="gqB-k1-Xej"/>
+                                </constraints>
+                            </stackView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eGb-6z-v8a">
+                                <rect key="frame" x="0.0" y="100" width="375" height="527"/>
+                                <connections>
+                                    <outlet property="delegate" destination="khR-JP-gSR" id="SWN-CM-uvq"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBF-tl-Vph">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wWV-cD-KTp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Get Current location">
+                                    <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectDate" destination="khR-JP-gSR" eventType="touchUpInside" id="8gl-VC-SC7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pMt-Da-amm" firstAttribute="top" secondItem="5q4-bh-B17" secondAttribute="top" id="9yd-tN-alc"/>
+                            <constraint firstItem="5q4-bh-B17" firstAttribute="trailing" secondItem="pMt-Da-amm" secondAttribute="trailing" id="FsY-YZ-z5Y"/>
+                            <constraint firstItem="eGb-6z-v8a" firstAttribute="trailing" secondItem="5q4-bh-B17" secondAttribute="trailing" id="GRE-Y1-LwP"/>
+                            <constraint firstItem="eGb-6z-v8a" firstAttribute="leading" secondItem="5q4-bh-B17" secondAttribute="leading" id="HWg-s7-dOn"/>
+                            <constraint firstItem="GBF-tl-Vph" firstAttribute="leading" secondItem="5q4-bh-B17" secondAttribute="leading" id="LQB-VA-2Vt"/>
+                            <constraint firstItem="5q4-bh-B17" firstAttribute="trailing" secondItem="GBF-tl-Vph" secondAttribute="trailing" id="eAw-bT-oVJ"/>
+                            <constraint firstItem="eGb-6z-v8a" firstAttribute="top" secondItem="pMt-Da-amm" secondAttribute="bottom" id="g6A-be-gWA"/>
+                            <constraint firstItem="5q4-bh-B17" firstAttribute="bottom" secondItem="GBF-tl-Vph" secondAttribute="bottom" id="mH1-4d-Ozx"/>
+                            <constraint firstItem="pMt-Da-amm" firstAttribute="leading" secondItem="5q4-bh-B17" secondAttribute="leading" id="r10-d3-ty8"/>
+                            <constraint firstItem="GBF-tl-Vph" firstAttribute="top" secondItem="eGb-6z-v8a" secondAttribute="bottom" id="uSX-8F-5bb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5q4-bh-B17"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="N4R-gt-jvk" id="ACj-MF-fiT"/>
+                        <outlet property="label1" destination="yzW-ck-ul1" id="xu5-at-FqP"/>
+                        <outlet property="mapView" destination="eGb-6z-v8a" id="lvc-kb-jfC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="laR-Ul-lxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2357.5999999999999" y="-118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
