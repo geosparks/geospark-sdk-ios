@@ -8,7 +8,7 @@ import UIKit
 import GeoSpark
 import UserNotifications
 
-let PUBLISABLEKEY = "1c46d881b9c505aa6446e97ed4be079a1844e6ec866af58f53675f4d18cb5385"
+let PUBLISABLEKEY = "YOUR-PUBLISABLE-KEY"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GeoSparkDelegate{
