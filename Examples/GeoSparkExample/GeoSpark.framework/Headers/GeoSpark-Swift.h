@@ -258,6 +258,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @class GeoSparkTrip;
 @class GeoSparkActiveTrips;
 @class UNNotificationResponse;
+@class GeoSparkEvents;
 
 SWIFT_CLASS("_TtC8GeoSpark8GeoSpark")
 @interface GeoSpark : NSObject
@@ -289,6 +290,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <GeoSparkDelegate> 
 + (void)updateCurrentLocation:(NSInteger)accuracy;
 + (void)setDeviceToken:(NSData * _Nonnull)deviceToken;
 + (void)notificationOpenedHandler:(UNNotificationResponse * _Nonnull)resposne;
++ (void)toggleEventsWithGeofence:(BOOL)geofence Trip:(BOOL)trip Activity:(BOOL)activity :(void (^ _Nonnull)(GeoSparkEvents * _Nonnull))onSuccess onFailure:(void (^ _Nonnull)(GeoSparkError * _Nonnull))onFailure;
++ (void)getEventsStatus:(void (^ _Nonnull)(GeoSparkEvents * _Nonnull))onSuccess onFailure:(void (^ _Nonnull)(GeoSparkError * _Nonnull))onFailure;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -320,6 +323,21 @@ SWIFT_CLASS("_TtC8GeoSpark13GeoSparkError")
 @interface GeoSparkError : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull errorCode;
 @property (nonatomic, readonly, copy) NSString * _Nonnull errorMessage;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC8GeoSpark14GeoSparkEvents")
+@interface GeoSparkEvents : NSObject <NSCoding>
+@property (nonatomic, copy) NSString * _Null_unspecified descriptionField;
+@property (nonatomic, copy) NSString * _Null_unspecified userId;
+/// NSCoding required initializer.
+/// Fills the data from the passed decoder
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+/// NSCoding required method.
+/// Encodes mode properties into the decoder
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -606,6 +624,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @class GeoSparkTrip;
 @class GeoSparkActiveTrips;
 @class UNNotificationResponse;
+@class GeoSparkEvents;
 
 SWIFT_CLASS("_TtC8GeoSpark8GeoSpark")
 @interface GeoSpark : NSObject
@@ -637,6 +656,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <GeoSparkDelegate> 
 + (void)updateCurrentLocation:(NSInteger)accuracy;
 + (void)setDeviceToken:(NSData * _Nonnull)deviceToken;
 + (void)notificationOpenedHandler:(UNNotificationResponse * _Nonnull)resposne;
++ (void)toggleEventsWithGeofence:(BOOL)geofence Trip:(BOOL)trip Activity:(BOOL)activity :(void (^ _Nonnull)(GeoSparkEvents * _Nonnull))onSuccess onFailure:(void (^ _Nonnull)(GeoSparkError * _Nonnull))onFailure;
++ (void)getEventsStatus:(void (^ _Nonnull)(GeoSparkEvents * _Nonnull))onSuccess onFailure:(void (^ _Nonnull)(GeoSparkError * _Nonnull))onFailure;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -668,6 +689,21 @@ SWIFT_CLASS("_TtC8GeoSpark13GeoSparkError")
 @interface GeoSparkError : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull errorCode;
 @property (nonatomic, readonly, copy) NSString * _Nonnull errorMessage;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC8GeoSpark14GeoSparkEvents")
+@interface GeoSparkEvents : NSObject <NSCoding>
+@property (nonatomic, copy) NSString * _Null_unspecified descriptionField;
+@property (nonatomic, copy) NSString * _Null_unspecified userId;
+/// NSCoding required initializer.
+/// Fills the data from the passed decoder
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+/// NSCoding required method.
+/// Encodes mode properties into the decoder
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
