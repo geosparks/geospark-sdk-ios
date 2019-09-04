@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/GeoSpark-Swift.h</key>
 		<data>
-		vlbXRPuqjGaMaBRbiYQujE6bdfQ=
+		KIhNeoG0AGlgslXPRYZMWxE4YUA=
 		</data>
 		<key>Headers/GeoSpark.h</key>
 		<data>
@@ -22,23 +22,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YRVyOvYG4XBacpR+/b8cF8LT6Vo=
+		GLdJqlhtRonywsPfD8BybU75hps=
 		</data>
 		<key>Modules/GeoSpark.swiftmodule/i386.swiftdoc</key>
 		<data>
-		izQDV7cUGpHvaVQ9w3NNY54hTvo=
+		pSKIUUd7NtA9fdK13+g+kQXELCE=
 		</data>
 		<key>Modules/GeoSpark.swiftmodule/i386.swiftmodule</key>
 		<data>
-		L1as9O3OAzjjE5Yyqvbhd7/3CJ4=
+		HHowSLne2u88EpHKPtTDmPSSNLg=
 		</data>
 		<key>Modules/GeoSpark.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		LwfVoZIT6cRhYrHTLf1h3uxgd+c=
+		6Ob6uA7kzo08TVct5T2MAaLg86E=
 		</data>
 		<key>Modules/GeoSpark.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		7hsRRaEqghDfaD9/qPf5DWrsFqs=
+		N2h/cXvJ2MuWvi2Dc9+0yTf9zi8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -73,11 +73,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vlbXRPuqjGaMaBRbiYQujE6bdfQ=
+			KIhNeoG0AGlgslXPRYZMWxE4YUA=
 			</data>
 			<key>hash2</key>
 			<data>
-			dcXlRUhvTUj72ezd7Lk3bomM8Cc1q1vVTSJaMPEgiCU=
+			GiluKk8T34+XiyyhtOVUcFiZTvpPAd+qCU7Cf/wwBbw=
 			</data>
 		</dict>
 		<key>Headers/GeoSpark.h</key>
@@ -95,44 +95,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			izQDV7cUGpHvaVQ9w3NNY54hTvo=
+			pSKIUUd7NtA9fdK13+g+kQXELCE=
 			</data>
 			<key>hash2</key>
 			<data>
-			j4BXuBnEg7gjrZ011bZFGW3QnQSbdZmpzsfHXN0AxaU=
+			8rCzJH0FP1oHHHpO144v70IiMBZAB0inuBZpCZI2Ijo=
 			</data>
 		</dict>
 		<key>Modules/GeoSpark.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			L1as9O3OAzjjE5Yyqvbhd7/3CJ4=
+			HHowSLne2u88EpHKPtTDmPSSNLg=
 			</data>
 			<key>hash2</key>
 			<data>
-			A12oZDOYY0UqHvf0JLHgl27FbW7WD6XY1jbRW1c1emo=
+			Z84LWQyae8r9ig/fdRozUQjaxWyzgLwe82pzvlRWFnM=
 			</data>
 		</dict>
 		<key>Modules/GeoSpark.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LwfVoZIT6cRhYrHTLf1h3uxgd+c=
+			6Ob6uA7kzo08TVct5T2MAaLg86E=
 			</data>
 			<key>hash2</key>
 			<data>
-			843tbA3IKNwzB9lIJb6t8XPN134H+XW16P41/4DLIrw=
+			drQ5q9asXeW9qEH7Swna9CAQc52WNuwn3BsnKoBycK8=
 			</data>
 		</dict>
 		<key>Modules/GeoSpark.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7hsRRaEqghDfaD9/qPf5DWrsFqs=
+			N2h/cXvJ2MuWvi2Dc9+0yTf9zi8=
 			</data>
 			<key>hash2</key>
 			<data>
-			tyoJZ6ibxRkHyhHmoJosqQiqqa933vVt1bS7dqEGwnA=
+			sprlzG/nxKPSVQNd/JsPEq74OCUhkKg2Y6qeIcOQY0Q=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
