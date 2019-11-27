@@ -24,7 +24,6 @@
 		DAE12E1D22CC860C00E59356 /* GetCurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE12E0722CC860C00E59356 /* GetCurrentLocationViewController.swift */; };
 		DAE12E1E22CC860C00E59356 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE12E0822CC860C00E59356 /* MapViewController.swift */; };
 		DAE12E2022CC860C00E59356 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE12E0A22CC860C00E59356 /* TripViewController.swift */; };
-		DAE12E2222CC86CD00E59356 /* GeoSpark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE12E2122CC86CD00E59356 /* GeoSpark.framework */; };
 		DAE12E2322CC87A500E59356 /* GeoSpark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE12E2122CC86CD00E59356 /* GeoSpark.framework */; };
 		DAE12E2422CC87A500E59356 /* GeoSpark.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAE12E2122CC86CD00E59356 /* GeoSpark.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAE12E2A22CC87DD00E59356 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE12E2622CC87DD00E59356 /* Main.storyboard */; };
@@ -78,7 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE12E2322CC87A500E59356 /* GeoSpark.framework in Frameworks */,
-				DAE12E2222CC86CD00E59356 /* GeoSpark.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +213,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "GeoSpark, Inc";
 				TargetAttributes = {
 					DAE12DD722CC85B800E59356 = {
@@ -432,7 +430,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GeoSparkExample/GeoSparkExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QH6UW9Q7Y4;
+				DEVELOPMENT_TEAM = B92BAJFGJP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GeoSparkExample",
@@ -442,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.storyboard.notify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geospark.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GeoSparkExample/GeoSparkExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -458,7 +456,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GeoSparkExample/GeoSparkExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QH6UW9Q7Y4;
+				DEVELOPMENT_TEAM = B92BAJFGJP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GeoSparkExample",
@@ -468,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.storyboard.notify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geospark.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GeoSparkExample/GeoSparkExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
