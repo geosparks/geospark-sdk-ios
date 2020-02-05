@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'GeoSpark'
-  s.version               = '2.2.0-beta1'
+  s.version               = '2.2.1'
   s.summary               = 'iOS SDK for GeoSpark, the location intelligence platform'
   s.homepage              = 'https://geospark.co'
   s.social_media_url      = 'https://twitter.com/geosparkai'
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.module_name           = 'GeoSpark'
   s.ios.deployment_target = '10.0'
   s.license               = { :type => 'Copyright',
-                              :text => 'Copyright (c) 2019 GeoSpark, Inc. All rights reserved.' }
+                              :text => 'Copyright (c) 2020 GeoSpark, Inc. All rights reserved.' }
 end
