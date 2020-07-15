@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'GeoSpark'
-  s.version               = '2.2.3'
+  s.version               = '2.2.4'
   s.summary               = 'iOS SDK for GeoSpark, the location intelligence platform'
   s.homepage              = 'https://geospark.co'
   s.social_media_url      = 'https://twitter.com/geosparkai'

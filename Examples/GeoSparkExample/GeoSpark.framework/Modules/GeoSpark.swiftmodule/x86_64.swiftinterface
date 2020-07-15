@@ -1,0 +1,132 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GeoSpark
+import CoreData
+import CoreLocation
+import CoreMotion
+import Foundation
+@_exported import GeoSpark
+import Swift
+import SystemConfiguration
+import UIKit
+import UserNotifications
+@_hasMissingDesignatedInitializers @objc public class ActiveTripsResponse : ObjectiveC.NSObject, Foundation.NSCoding {
+  @objc public var createdAt: Swift.String!
+  @objc public var trip_id: Swift.String!
+  @objc public var isDeleted: Swift.Bool
+  @objc public var isEnded: Swift.Bool
+  @objc public var isStarted: Swift.Bool
+  @objc public var isPaused: Swift.Bool
+  @objc public var updatedAt: Swift.String!
+  @objc required public init(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class GeoSparkActiveTrips : ObjectiveC.NSObject, Foundation.NSCoding {
+  @objc public var code: Swift.Int
+  @objc public var trips: [GeoSpark.ActiveTripsResponse]!
+  @objc public var msg: Swift.String!
+  @objc public var status: Swift.Bool
+  @objc required public init(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class GeoSparkEvents : ObjectiveC.NSObject, Foundation.NSCoding {
+  @objc public var descriptionField: Swift.String!
+  @objc public var geofenceEvents: Swift.Bool
+  @objc public var activityEvents: Swift.Bool
+  @objc public var tripsEvents: Swift.Bool
+  @objc public var userId: Swift.String!
+  @objc required public init(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc open class GSMotion : ObjectiveC.NSObject {
+  @objc public static let All: Swift.String
+  @objc public static let Running: Swift.String
+  @objc public static let Walking: Swift.String
+  @objc public static let AutoMotive: Swift.String
+  @objc public static let Stationary: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc open class GSAppState : ObjectiveC.NSObject {
+  @objc public static let Foreground: Swift.String
+  @objc public static let Terminated: Swift.String
+  @objc public static let Background: Swift.String
+  @objc public static let AlwaysOn: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class GeoSparkTrip : ObjectiveC.NSObject {
+  @objc public var msg: Swift.String!
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class GeoSparkError : ObjectiveC.NSObject {
+  @objc final public let errorCode: Swift.String
+  @objc final public let errorMessage: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class GSLocation : ObjectiveC.NSObject {
+  @objc public var userId: Swift.String!
+  @objc public var activity: Swift.String!
+  @objc public var latitude: Swift.Double
+  @objc public var longitude: Swift.Double
+  @objc public var accuracy: Swift.Double
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class GeoSpark : ObjectiveC.NSObject {
+  @objc public static var delegate: GeoSpark.GeoSparkDelegate! {
+    @objc get
+    @objc set
+  }
+  @objc public static func intialize(_ publishKey: Swift.String)
+  @objc public static func createUser(_ userDescription: Swift.String, _ onSuccess: @escaping (GeoSpark.GeoSparkUser) -> (), onFailure: @escaping (GeoSpark.GeoSparkError) -> ())
+  @objc public static func getUser(_ userID: Swift.String, _ onSuccess: @escaping (GeoSpark.GeoSparkUser) -> (), onFailure: @escaping (GeoSpark.GeoSparkError) -> ())
+  @objc public static func startSessionIfNeeded(_ onSuccess: @escaping (GeoSpark.GeoSparkUser) -> (), onFailure: @escaping (GeoSpark.GeoSparkError) -> ())
+  @objc public static func startTracking()
+  @objc public static func stopTracking()
+  @objc public static func setDescription(_ descriptionString: Swift.String, _ onSuccess: @escaping ((GeoSpark.GeoSparkUser) -> Swift.Void), onFailure: @escaping ((GeoSpark.GeoSparkError) -> Swift.Void))
+  @objc public static func logout(_ onSuccess: @escaping ((Swift.String) -> Swift.Void), onFailure: @escaping ((GeoSpark.GeoSparkError) -> Swift.Void))
+  @objc public static func startTrip(_ tripID: Swift.String, _ tripDesc: Swift.String, _ onSuccess: @escaping (GeoSpark.GeoSparkTrip) -> (), onFailure: @escaping (GeoSpark.GeoSparkError) -> ())
+  @objc public static func endTrip(_ tripID: Swift.String, _ onSuccess: @escaping (GeoSpark.GeoSparkTrip) -> (), onFailure: @escaping (GeoSpark.GeoSparkError) -> ())
+  @objc public static func pauseTrip(_ tripID: Swift.String, _ onSuccess: @escaping (GeoSpark.GeoSparkTrip) -> (), onFailure: @escaping (GeoSpark.GeoSparkError) -> ())
+  @objc public static func resumeTrip(_ tripID: Swift.String, _ onSuccess: @escaping (GeoSpark.GeoSparkTrip) -> (), onFailure: @escaping (GeoSpark.GeoSparkError) -> ())
+  @objc public static func activeTrips(_ onSuccess: @escaping (GeoSpark.GeoSparkActiveTrips) -> (), onFailure: @escaping (GeoSpark.GeoSparkError) -> ())
+  @objc public static func getUserId() -> Swift.String
+  @objc public static func requestLocation()
+  @objc public static func requestMotion()
+  @objc public static func isLocationEnabled() -> Swift.Bool
+  @objc public static func isLocationTracking() -> Swift.Bool
+  @objc public static func isMotionEnabled() -> Swift.Bool
+  @objc public static func trackLocationInAppState(_ states: [Swift.String])
+  @objc public static func trackLocationInMotion(_ motions: [Swift.String])
+  @objc public static func setLocationAccuracy(_ accuracy: Swift.Int)
+  @objc public static func enableLogger(_ value: Swift.Bool)
+  @objc public static func getCurrentLocation(_ accuracy: Swift.Int, location: @escaping ((GeoSpark.GSLocation) -> Swift.Void))
+  @objc public static func updateCurrentLocation(_ accuracy: Swift.Int)
+  @objc public static func setDeviceToken(_ deviceToken: Foundation.Data)
+  @objc public static func notificationOpenedHandler(_ resposne: UserNotifications.UNNotificationResponse)
+  @objc public static func toggleEvents(Geofence geofence: Swift.Bool, Trip trip: Swift.Bool, Activity activity: Swift.Bool, _ onSuccess: @escaping ((GeoSpark.GeoSparkUser) -> Swift.Void), onFailure: @escaping ((GeoSpark.GeoSparkError) -> Swift.Void))
+  @objc public static func getEventsStatus(_ onSuccess: @escaping ((GeoSpark.GeoSparkUser) -> Swift.Void), onFailure: @escaping ((GeoSpark.GeoSparkError) -> Swift.Void))
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class GeoSparkUser : ObjectiveC.NSObject {
+  @objc final public let userId: Swift.String
+  @objc final public let userDescription: Swift.String?
+  @objc public var geofenceEvents: Swift.Bool
+  @objc public var activityEvents: Swift.Bool
+  @objc public var tripsEvents: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol GeoSparkDelegate {
+  @objc func didUpdateLocation(_ location: GeoSpark.GSLocation)
+}
