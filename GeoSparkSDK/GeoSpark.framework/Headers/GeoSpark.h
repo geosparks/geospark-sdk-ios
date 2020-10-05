@@ -2,11 +2,11 @@
 //  GeoSpark.h
 //  GeoSpark
 //
-//  Created by GeoSpark Mac #1 on 22/10/18.
-//  Copyright © 2018 GeoSpark, Inc. All rights reserved.
+//  Created by GeoSpark Mac 15 on 24/09/20.
+//  Copyright © 2020 GeoSpark Mac 15. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for GeoSpark.
 FOUNDATION_EXPORT double GeoSparkVersionNumber;
