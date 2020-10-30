@@ -50,8 +50,8 @@ import UserNotifications
   @objc public var locationEvents: Swift.Bool
   @objc public var tripsEvents: Swift.Bool
   @objc public var nearbyEvents: Swift.Bool
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkGetTrip : ObjectiveC.NSObject {
   @objc public var createdAt: Swift.String!
@@ -118,6 +118,9 @@ import UserNotifications
   @objc public static func unsubscribeUserLocation(_ userId: Swift.String)
   @objc public static func subscribeTripStatus(_ tripId: Swift.String)
   @objc public static func unsubscribeTripStatus(_ tripId: Swift.String)
+  @objc public static func setTrackingInAppState(_ state: GeoSpark.GeoSparkTrackingState)
+  @objc public static func offlineLocationTracking(_ offlineTracking: Swift.Bool)
+  @objc public static func locationPublisher(_ locationPublisher: Swift.Bool)
   @objc deinit
   @objc override dynamic public init()
 }
@@ -226,19 +229,15 @@ public enum LocationAccuracy {
   case active
   case custom
   public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
-@objc public enum Trip : Swift.Int {
-  case Start
-  case Pause
-  case Resume
-  case End
-  case ForceEnd
-  case Delete
-  case Sync
+@objc public enum GeoSparkTrackingState : Swift.Int {
+  case AlwaysOn = 0
+  case Foreground
+  case Background
   public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
   public var rawValue: Swift.Int {
@@ -247,8 +246,8 @@ public enum LocationAccuracy {
 }
 @objc public protocol GeoSparkDelegate {
   @objc func didUpdateLocation(_ location: GeoSpark.GeoSparkLocation)
-  @objc func didReceiveEvents(_ dictionary: Swift.Dictionary<Swift.String, Any>)
-  @objc func didReceiveUserLocation(_ dictionary: Swift.Dictionary<Swift.String, Any>)
+  @objc func didReceiveEvents(_ events: GeoSpark.GeoSparkEvents)
+  @objc func didReceiveUserLocation(_ location: GeoSpark.GeoSparkLocationReceived)
   @objc func didReceiveTripStatus(_ tripStatus: GeoSpark.TripStatusListener)
   @objc func onError(_ error: GeoSpark.GeoSparkError)
 }
@@ -337,6 +336,28 @@ extension Reachability {
     get
   }
 }
+@_hasMissingDesignatedInitializers @objc public class GeoSparkEvents : ObjectiveC.NSObject {
+  @objc public var activity: Swift.String?
+  @objc public var altitude: Foundation.NSNumber
+  @objc public var course: Foundation.NSNumber
+  @objc public var createdAt: Swift.String?
+  @objc public var distance: Foundation.NSNumber
+  @objc public var eventSource: Swift.String?
+  @objc public var eventType: Swift.String?
+  @objc public var eventVersion: Swift.String?
+  @objc public var geofenceId: Swift.String?
+  @objc public var horizontalAccuracy: Foundation.NSNumber
+  @objc public var coordinates: [Swift.Double]?
+  @objc public var locationId: Swift.String?
+  @objc public var nearbyUserId: Swift.String?
+  @objc public var recordedAt: Swift.String?
+  @objc public var speed: Foundation.NSNumber
+  @objc public var tripId: Swift.String?
+  @objc public var userId: Swift.String?
+  @objc public var veritcalAccuracy: Foundation.NSNumber
+  @objc override dynamic public init()
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers @objc public class TripStatusListener : ObjectiveC.NSObject {
   @objc final public let tripId: Swift.String
   @objc final public let speed: Swift.Double
@@ -354,8 +375,26 @@ extension Reachability {
   @objc public var altitude: Foundation.NSNumber!
   @objc public var coordinates: [Swift.Double]!
   @objc public var recordedAt: Swift.String!
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class GeoSparkLocationReceived : ObjectiveC.NSObject {
+  @objc public var activity: Swift.String!
+  @objc public var altitude: Foundation.NSNumber!
+  @objc public var latitude: Foundation.NSNumber!
+  @objc public var longitude: Foundation.NSNumber!
+  @objc public var course: Foundation.NSNumber!
+  @objc public var eventSource: Swift.String!
+  @objc public var eventType: Swift.String!
+  @objc public var eventVersion: Swift.String!
+  @objc public var horizontalAccuracy: Foundation.NSNumber!
+  @objc public var locationId: Swift.String!
+  @objc public var recordedAt: Swift.String!
+  @objc public var speed: Foundation.NSNumber!
+  @objc public var userId: Swift.String!
+  @objc public var verticalAccuracy: Foundation.NSNumber!
+  @objc deinit
+  @objc override dynamic public init()
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkError : ObjectiveC.NSObject {
   @objc final public let code: Swift.String?
