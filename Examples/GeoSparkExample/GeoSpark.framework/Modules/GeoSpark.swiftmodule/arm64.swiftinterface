@@ -18,6 +18,8 @@ import UserNotifications
   @objc final public let userId: Swift.String?
   @objc final public let activity: Swift.String?
   @objc final public let location: CoreLocation.CLLocation
+  @objc final public let timezoneOffset: Swift.String?
+  @objc final public let recordedAt: Swift.String?
   @objc deinit
   @objc override dynamic public init()
 }
@@ -86,6 +88,8 @@ import UserNotifications
   @objc public static func setDeviceToken(_ deviceToken: Foundation.Data)
   @objc public static func startTracking(_ trackingMethod: GeoSpark.GeoSparkTrackingMode, options: GeoSpark.GeoSparkTrackingCustomMethods? = nil)
   @objc public static func stopTracking()
+  @objc public static func startSelfTracking(_ trackingMethod: GeoSpark.GeoSparkTrackingMode, options: GeoSpark.GeoSparkTrackingCustomMethods? = nil)
+  @objc public static func stopSelfTracking()
   @objc public static func requestLocation()
   @objc public static func isLocationEnabled() -> Swift.Bool
   @objc public static func isLocationTracking() -> Swift.Bool
@@ -246,10 +250,10 @@ public enum LocationAccuracy {
 }
 @objc public protocol GeoSparkDelegate {
   @objc func didUpdateLocation(_ location: GeoSpark.GeoSparkLocation)
-  @objc func didReceiveEvents(_ events: GeoSpark.GeoSparkEvents)
-  @objc func didReceiveUserLocation(_ location: GeoSpark.GeoSparkLocationReceived)
-  @objc func didReceiveTripStatus(_ tripStatus: GeoSpark.TripStatusListener)
-  @objc func onError(_ error: GeoSpark.GeoSparkError)
+  @objc optional func didReceiveEvents(_ events: GeoSpark.GeoSparkEvents)
+  @objc optional func didReceiveUserLocation(_ location: GeoSpark.GeoSparkLocationReceived)
+  @objc optional func didReceiveTripStatus(_ tripStatus: GeoSpark.TripStatusListener)
+  @objc optional func onError(_ error: GeoSpark.GeoSparkError)
 }
 public enum ReachabilityError : Swift.Error {
   case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)

@@ -237,6 +237,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <GeoSparkDelegate> 
 + (void)setDeviceToken:(NSData * _Nonnull)deviceToken;
 + (void)startTracking:(enum GeoSparkTrackingMode)trackingMethod options:(GeoSparkTrackingCustomMethods * _Nullable)options;
 + (void)stopTracking;
++ (void)startSelfTracking:(enum GeoSparkTrackingMode)trackingMethod options:(GeoSparkTrackingCustomMethods * _Nullable)options;
++ (void)stopSelfTracking;
 + (void)requestLocation;
 + (BOOL)isLocationEnabled SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)isLocationTracking SWIFT_WARN_UNUSED_RESULT;
@@ -302,6 +304,7 @@ SWIFT_CLASS("_TtC8GeoSpark18GeoSparkCreateTrip")
 SWIFT_PROTOCOL("_TtP8GeoSpark16GeoSparkDelegate_")
 @protocol GeoSparkDelegate
 - (void)didUpdateLocation:(GeoSparkLocation * _Nonnull)location;
+@optional
 - (void)didReceiveEvents:(GeoSparkEvents * _Nonnull)events;
 - (void)didReceiveUserLocation:(GeoSparkLocationReceived * _Nonnull)location;
 - (void)didReceiveTripStatus:(TripStatusListener * _Nonnull)tripStatus;
@@ -373,6 +376,8 @@ SWIFT_CLASS("_TtC8GeoSpark16GeoSparkLocation")
 @property (nonatomic, readonly, copy) NSString * _Nullable userId;
 @property (nonatomic, readonly, copy) NSString * _Nullable activity;
 @property (nonatomic, readonly, strong) CLLocation * _Nonnull location;
+@property (nonatomic, readonly, copy) NSString * _Nullable timezoneOffset;
+@property (nonatomic, readonly, copy) NSString * _Nullable recordedAt;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -965,6 +970,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <GeoSparkDelegate> 
 + (void)setDeviceToken:(NSData * _Nonnull)deviceToken;
 + (void)startTracking:(enum GeoSparkTrackingMode)trackingMethod options:(GeoSparkTrackingCustomMethods * _Nullable)options;
 + (void)stopTracking;
++ (void)startSelfTracking:(enum GeoSparkTrackingMode)trackingMethod options:(GeoSparkTrackingCustomMethods * _Nullable)options;
++ (void)stopSelfTracking;
 + (void)requestLocation;
 + (BOOL)isLocationEnabled SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)isLocationTracking SWIFT_WARN_UNUSED_RESULT;
@@ -1030,6 +1037,7 @@ SWIFT_CLASS("_TtC8GeoSpark18GeoSparkCreateTrip")
 SWIFT_PROTOCOL("_TtP8GeoSpark16GeoSparkDelegate_")
 @protocol GeoSparkDelegate
 - (void)didUpdateLocation:(GeoSparkLocation * _Nonnull)location;
+@optional
 - (void)didReceiveEvents:(GeoSparkEvents * _Nonnull)events;
 - (void)didReceiveUserLocation:(GeoSparkLocationReceived * _Nonnull)location;
 - (void)didReceiveTripStatus:(TripStatusListener * _Nonnull)tripStatus;
@@ -1101,6 +1109,8 @@ SWIFT_CLASS("_TtC8GeoSpark16GeoSparkLocation")
 @property (nonatomic, readonly, copy) NSString * _Nullable userId;
 @property (nonatomic, readonly, copy) NSString * _Nullable activity;
 @property (nonatomic, readonly, strong) CLLocation * _Nonnull location;
+@property (nonatomic, readonly, copy) NSString * _Nullable timezoneOffset;
+@property (nonatomic, readonly, copy) NSString * _Nullable recordedAt;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
