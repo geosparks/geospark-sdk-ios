@@ -190,6 +190,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import AWSCore;
 @import CoreData;
+@import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
 #endif
@@ -407,6 +408,15 @@ SWIFT_CLASS("_TtC8GeoSpark24GeoSparkLocationReceived")
 SWIFT_CLASS("_TtC8GeoSpark29GeoSparkTrackingCustomMethods")
 @interface GeoSparkTrackingCustomMethods : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+enum LocationAccuracy : NSInteger;
+
+SWIFT_CLASS("_TtC8GeoSpark40GeoSparkTrackingCustomMethodsObjcWrapper")
+@interface GeoSparkTrackingCustomMethodsObjcWrapper : NSObject
+@property (nonatomic, readonly, strong) GeoSparkTrackingCustomMethods * _Nonnull customMethods;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)setUpCustomOptionsWithDesiredAccuracy:(enum LocationAccuracy)desiredAccuracy useVisit:(BOOL)useVisit showsBackgroundLocationIndicator:(BOOL)showsBackgroundLocationIndicator distanceFilter:(CLLocationDistance)distanceFilter useSignificant:(BOOL)useSignificant useRegionMonitoring:(BOOL)useRegionMonitoring useDynamicGeofencRadius:(BOOL)useDynamicGeofencRadius geofenceRadius:(NSInteger)geofenceRadius allowBackgroundLocationUpdates:(BOOL)allowBackgroundLocationUpdates activityType:(CLActivityType)activityType pausesLocationUpdatesAutomatically:(BOOL)pausesLocationUpdatesAutomatically useStandardLocationServices:(BOOL)useStandardLocationServices;
 @end
 
 typedef SWIFT_ENUM(NSInteger, GeoSparkTrackingMode, open) {

@@ -379,8 +379,8 @@ extension Reachability {
   @objc public var altitude: Foundation.NSNumber!
   @objc public var coordinates: [Swift.Double]!
   @objc public var recordedAt: Swift.String!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkLocationReceived : ObjectiveC.NSObject {
   @objc public var activity: Swift.String!
@@ -405,6 +405,12 @@ extension Reachability {
   @objc final public let message: Swift.String?
   @objc deinit
   @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class GeoSparkTrackingCustomMethodsObjcWrapper : ObjectiveC.NSObject {
+  @objc final public let customMethods: GeoSpark.GeoSparkTrackingCustomMethods
+  @objc override dynamic public init()
+  @objc public func setUpCustomOptions(desiredAccuracy: GeoSpark.LocationAccuracy, useVisit: Swift.Bool, showsBackgroundLocationIndicator: Swift.Bool, distanceFilter: CoreLocation.CLLocationDistance, useSignificant: Swift.Bool, useRegionMonitoring: Swift.Bool, useDynamicGeofencRadius: Swift.Bool, geofenceRadius: Swift.Int, allowBackgroundLocationUpdates: Swift.Bool, activityType: CoreLocation.CLActivityType, pausesLocationUpdatesAutomatically: Swift.Bool, useStandardLocationServices: Swift.Bool)
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(HttpLocationData) public class HttpLocationData : CoreData.NSManagedObject {
   @objc deinit
