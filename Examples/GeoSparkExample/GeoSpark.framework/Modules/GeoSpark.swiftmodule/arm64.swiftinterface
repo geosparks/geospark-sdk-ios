@@ -125,6 +125,8 @@ import UserNotifications
   @objc public static func setTrackingInAppState(_ state: GeoSpark.GeoSparkTrackingState)
   @objc public static func offlineLocationTracking(_ offlineTracking: Swift.Bool)
   @objc public static func locationPublisher(_ locationPublisher: Swift.Bool)
+  @objc public static func enableAccuracyEngine()
+  @objc public static func disableAccuracyEngine()
   @objc deinit
   @objc override dynamic public init()
 }
@@ -165,6 +167,7 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   public var activityType: CoreLocation.CLActivityType?
   public var pausesLocationUpdatesAutomatically: Swift.Bool?
   public var useStandardLocationServices: Swift.Bool?
+  public var accuracyFilter: Swift.Int?
   @objc override dynamic public init()
   @objc deinit
 }

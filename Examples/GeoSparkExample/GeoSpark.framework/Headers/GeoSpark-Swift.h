@@ -275,6 +275,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <GeoSparkDelegate> 
 + (void)setTrackingInAppState:(enum GeoSparkTrackingState)state;
 + (void)offlineLocationTracking:(BOOL)offlineTracking;
 + (void)locationPublisher:(BOOL)locationPublisher;
++ (void)enableAccuracyEngine;
++ (void)disableAccuracyEngine;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
