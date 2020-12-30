@@ -529,6 +529,8 @@ SWIFT_CLASS("_TtC8GeoSpark12GeoSparkUser")
 @property (nonatomic) BOOL locationEvents;
 @property (nonatomic) BOOL tripsEvents;
 @property (nonatomic) BOOL nearbyEvents;
+@property (nonatomic, readonly, copy) NSString * _Nonnull account_id;
+@property (nonatomic, readonly, copy) NSString * _Nonnull project_id;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -673,6 +675,16 @@ SWIFT_CLASS_NAMED("MyTripRoute")
 @property (nonatomic, strong) MyTrip * _Nullable trip;
 @end
 
+
+
+SWIFT_CLASS("_TtC8GeoSpark11ShadowState")
+@interface ShadowState : NSObject
+@property (nonatomic, copy) NSString * _Nullable welcome;
+@property (nonatomic, strong) NSNumber * _Nullable location_tracking;
+@property (nonatomic, strong) NSNumber * _Nullable pub_sub;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 SWIFT_CLASS_NAMED("TripEventsLocal")

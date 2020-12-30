@@ -4,6 +4,7 @@
 import AWSCore
 import AWSIoT
 import AWSMobileClient
+import CommonCrypto
 import CoreData
 import CoreLocation
 import CoreMotion
@@ -52,6 +53,8 @@ import UserNotifications
   @objc public var locationEvents: Swift.Bool
   @objc public var tripsEvents: Swift.Bool
   @objc public var nearbyEvents: Swift.Bool
+  @objc final public let account_id: Swift.String
+  @objc final public let project_id: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -374,6 +377,13 @@ extension Reachability {
   @objc final public let pace: Swift.Double
   @objc final public let latitude: Swift.Double
   @objc final public let longitude: Swift.Double
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class ShadowState : ObjectiveC.NSObject {
+  @objc public var welcome: Swift.String?
+  @objc public var location_tracking: Foundation.NSNumber?
+  @objc public var pub_sub: Foundation.NSNumber?
   @objc deinit
   @objc override dynamic public init()
 }
