@@ -380,6 +380,90 @@ extension Reachability {
   @objc deinit
   @objc override dynamic public init()
 }
+public enum Model : Swift.String {
+  case simulator
+  case iPod1
+  case iPod2
+  case iPod3
+  case iPod4
+  case iPod5
+  case iPod6
+  case iPod7
+  case iPad2
+  case iPad3
+  case iPad4
+  case iPadAir
+  case iPadAir2
+  case iPadAir3
+  case iPadAir4
+  case iPad5
+  case iPad6
+  case iPad7
+  case iPad8
+  case iPadMini
+  case iPadMini2
+  case iPadMini3
+  case iPadMini4
+  case iPadMini5
+  case iPadPro9_7
+  case iPadPro10_5
+  case iPadPro11
+  case iPadPro2_11
+  case iPadPro12_9
+  case iPadPro2_12_9
+  case iPadPro3_12_9
+  case iPadPro4_12_9
+  case iPhone4
+  case iPhone4S
+  case iPhone5
+  case iPhone5S
+  case iPhone5C
+  case iPhone6
+  case iPhone6Plus
+  case iPhone6S
+  case iPhone6SPlus
+  case iPhoneSE
+  case iPhone7
+  case iPhone7Plus
+  case iPhone8
+  case iPhone8Plus
+  case iPhoneX
+  case iPhoneXS
+  case iPhoneXSMax
+  case iPhoneXR
+  case iPhone11
+  case iPhone11Pro
+  case iPhone11ProMax
+  case iPhoneSE2
+  case iPhone12Mini
+  case iPhone12
+  case iPhone12Pro
+  case iPhone12ProMax
+  case AppleWatch1
+  case AppleWatchS1
+  case AppleWatchS2
+  case AppleWatchS3
+  case AppleWatchS4
+  case AppleWatchS5
+  case AppleWatchSE
+  case AppleWatchS6
+  case AppleTV1
+  case AppleTV2
+  case AppleTV3
+  case AppleTV4
+  case AppleTV_4K
+  case unrecognized
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension UIDevice {
+  public var type: GeoSpark.Model {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers @objc public class ShadowState : ObjectiveC.NSObject {
   @objc public var welcome: Swift.String?
   @objc public var location_tracking: Foundation.NSNumber?
