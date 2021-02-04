@@ -83,7 +83,7 @@ import UserNotifications
     @objc get
     @objc set(value)
   }
-  @objc public static func intialize(_ publishKey: Swift.String, _ baseUrl: Swift.String? = nil, _ p12FilePath: Swift.String? = nil, _ iOTEndPoint: Swift.String? = nil, _ passPhrase: Swift.String? = nil, _ region: AWSCore.AWSRegionType = .Unknown)
+  @objc public static func initialize(_ publishKey: Swift.String, _ baseUrl: Swift.String? = nil, _ p12FilePath: Swift.String? = nil, _ iOTEndPoint: Swift.String? = nil, _ passPhrase: Swift.String? = nil, _ region: AWSCore.AWSRegionType = .Unknown)
   @objc public static func createUser(_ description: Swift.String, handler: GeoSpark.GeoSparkUserCompletionhandler? = nil)
   @objc public static func getUser(_ userId: Swift.String, handler: GeoSpark.GeoSparkUserCompletionhandler? = nil)
   @objc public static func setDescription(_ description: Swift.String)
@@ -117,19 +117,17 @@ import UserNotifications
   @objc public static func getListenerStatus(handler: GeoSpark.GeoSparkUserCompletionhandler? = nil)
   @objc public static func notificationOpenedHandler(_ resposne: UserNotifications.UNNotificationResponse)
   @objc public static func setLoggerEnabled(logger: Swift.Bool)
-  @objc public static func subscribeEvents()
-  @objc public static func unsubscribeEvents()
-  @objc public static func subscribeLocation()
-  @objc public static func unsubscribeLocation()
-  @objc public static func subscribeUserLocation(_ userId: Swift.String)
-  @objc public static func unsubscribeUserLocation(_ userId: Swift.String)
   @objc public static func subscribeTripStatus(_ tripId: Swift.String)
   @objc public static func unsubscribeTripStatus(_ tripId: Swift.String)
   @objc public static func setTrackingInAppState(_ state: GeoSpark.GeoSparkTrackingState)
   @objc public static func offlineLocationTracking(_ offlineTracking: Swift.Bool)
-  @objc public static func locationPublisher(_ locationPublisher: Swift.Bool)
   @objc public static func enableAccuracyEngine()
   @objc public static func disableAccuracyEngine()
+  @objc public static func publishSave(_ publish: GeoSpark.GeoSparkPublish? = nil)
+  @objc public static func publishOnly(_ publish: GeoSpark.GeoSparkPublish? = nil)
+  @objc public static func subscribe(_ type: GeoSpark.GeoSparkSubscribe, _ userId: Swift.String)
+  @objc public static func unsubscribe(_ type: GeoSpark.GeoSparkSubscribe, _ userId: Swift.String)
+  @objc public static func stopPublishing()
   @objc deinit
   @objc override dynamic public init()
 }
@@ -235,7 +233,7 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
 }
 @objc public enum GeoSparkTrackingMode : Swift.Int {
   case passive = 0
-  case reactive
+  case balanced
   case active
   case custom
   public typealias RawValue = Swift.Int
@@ -248,6 +246,16 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   case AlwaysOn = 0
   case Foreground
   case Background
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum GeoSparkSubscribe : Swift.Int {
+  case Both
+  case Location
+  case Events
   public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
   public var rawValue: Swift.Int {
@@ -345,6 +353,39 @@ extension Reachability {
   public var description: Swift.String {
     get
   }
+}
+@_inheritsConvenienceInitializers @objc public class GeoSparkPublish : ObjectiveC.NSObject {
+  @objc public var meta_data: Swift.Dictionary<Swift.String, Any>?
+  @objc public var user_id: Swift.Bool
+  @objc public var app_id: Swift.Bool
+  @objc public var recorded_at: Swift.Bool
+  @objc public var tz_offset: Swift.Bool
+  @objc public var geofence_events: Swift.Bool
+  @objc public var trips_events: Swift.Bool
+  @objc public var location_events: Swift.Bool
+  @objc public var nearby_events: Swift.Bool
+  @objc public var location_listener: Swift.Bool
+  @objc public var event_listener: Swift.Bool
+  @objc public var app_context: Swift.Bool
+  @objc public var network_status: Swift.Bool
+  @objc public var gps_status: Swift.Bool
+  @objc public var location_permission: Swift.Bool
+  @objc public var battery_status: Swift.Bool
+  @objc public var airplane_mode: Swift.Bool
+  @objc public var battery_saver: Swift.Bool
+  @objc public var battery_remaining: Swift.Bool
+  @objc public var device_model: Swift.Bool
+  @objc public var device_manufacturer: Swift.Bool
+  @objc public var os_version: Swift.Bool
+  @objc public var tracking_mode: Swift.Bool
+  @objc public var altitude: Swift.Bool
+  @objc public var speed: Swift.Bool
+  @objc public var vertical_accuracy: Swift.Bool
+  @objc public var horizontal_accuracy: Swift.Bool
+  @objc public var course: Swift.Bool
+  @objc public var activity: Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkEvents : ObjectiveC.NSObject {
   @objc public var activity: Swift.String?
@@ -464,20 +505,13 @@ extension UIDevice {
     get
   }
 }
-@_hasMissingDesignatedInitializers @objc public class ShadowState : ObjectiveC.NSObject {
-  @objc public var welcome: Swift.String?
-  @objc public var location_tracking: Foundation.NSNumber?
-  @objc public var pub_sub: Foundation.NSNumber?
-  @objc deinit
-  @objc override dynamic public init()
-}
 @_hasMissingDesignatedInitializers @objc public class MotionTripSummaryRoute : ObjectiveC.NSObject {
   @objc public var activity: Swift.String!
   @objc public var altitude: Foundation.NSNumber!
   @objc public var coordinates: [Swift.Double]!
   @objc public var recordedAt: Swift.String!
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkLocationReceived : ObjectiveC.NSObject {
   @objc public var activity: Swift.String!

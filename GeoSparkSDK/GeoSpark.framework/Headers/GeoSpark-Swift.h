@@ -224,13 +224,15 @@ enum GeoSparkTrackingMode : NSInteger;
 @class GeoSparkTripListener;
 @class UNNotificationResponse;
 enum GeoSparkTrackingState : NSInteger;
+@class GeoSparkPublish;
+enum GeoSparkSubscribe : NSInteger;
 
 SWIFT_CLASS("_TtC8GeoSpark8GeoSpark")
 @interface GeoSpark : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <GeoSparkDelegate> _Null_unspecified delegate;)
 + (id <GeoSparkDelegate> _Null_unspecified)delegate SWIFT_WARN_UNUSED_RESULT;
 + (void)setDelegate:(id <GeoSparkDelegate> _Null_unspecified)value;
-+ (void)intialize:(NSString * _Nonnull)publishKey :(NSString * _Nullable)baseUrl :(NSString * _Nullable)p12FilePath :(NSString * _Nullable)iOTEndPoint :(NSString * _Nullable)passPhrase :(AWSRegionType)region;
++ (void)initialize:(NSString * _Nonnull)publishKey :(NSString * _Nullable)baseUrl :(NSString * _Nullable)p12FilePath :(NSString * _Nullable)iOTEndPoint :(NSString * _Nullable)passPhrase :(AWSRegionType)region;
 + (void)createUser:(NSString * _Nonnull)description handler:(void (^ _Nullable)(GeoSparkUser * _Nullable, GeoSparkError * _Nullable))handler;
 + (void)getUser:(NSString * _Nonnull)userId handler:(void (^ _Nullable)(GeoSparkUser * _Nullable, GeoSparkError * _Nullable))handler;
 + (void)setDescription:(NSString * _Nonnull)description;
@@ -264,19 +266,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <GeoSparkDelegate> 
 + (void)getListenerStatusWithHandler:(void (^ _Nullable)(GeoSparkUser * _Nullable, GeoSparkError * _Nullable))handler;
 + (void)notificationOpenedHandler:(UNNotificationResponse * _Nonnull)resposne;
 + (void)setLoggerEnabledWithLogger:(BOOL)logger;
-+ (void)subscribeEvents;
-+ (void)unsubscribeEvents;
-+ (void)subscribeLocation;
-+ (void)unsubscribeLocation;
-+ (void)subscribeUserLocation:(NSString * _Nonnull)userId;
-+ (void)unsubscribeUserLocation:(NSString * _Nonnull)userId;
 + (void)subscribeTripStatus:(NSString * _Nonnull)tripId;
 + (void)unsubscribeTripStatus:(NSString * _Nonnull)tripId;
 + (void)setTrackingInAppState:(enum GeoSparkTrackingState)state;
 + (void)offlineLocationTracking:(BOOL)offlineTracking;
-+ (void)locationPublisher:(BOOL)locationPublisher;
 + (void)enableAccuracyEngine;
 + (void)disableAccuracyEngine;
++ (void)publishSave:(GeoSparkPublish * _Nullable)publish;
++ (void)publishOnly:(GeoSparkPublish * _Nullable)publish;
++ (void)subscribe:(enum GeoSparkSubscribe)type :(NSString * _Nonnull)userId;
++ (void)unsubscribe:(enum GeoSparkSubscribe)type :(NSString * _Nonnull)userId;
++ (void)stopPublishing;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -407,6 +407,47 @@ SWIFT_CLASS("_TtC8GeoSpark24GeoSparkLocationReceived")
 @end
 
 
+SWIFT_CLASS("_TtC8GeoSpark15GeoSparkPublish")
+@interface GeoSparkPublish : NSObject
+@property (nonatomic, copy) NSDictionary<NSString *, id> * _Nullable meta_data;
+@property (nonatomic) BOOL user_id;
+@property (nonatomic) BOOL app_id;
+@property (nonatomic) BOOL recorded_at;
+@property (nonatomic) BOOL tz_offset;
+@property (nonatomic) BOOL geofence_events;
+@property (nonatomic) BOOL trips_events;
+@property (nonatomic) BOOL location_events;
+@property (nonatomic) BOOL nearby_events;
+@property (nonatomic) BOOL location_listener;
+@property (nonatomic) BOOL event_listener;
+@property (nonatomic) BOOL app_context;
+@property (nonatomic) BOOL network_status;
+@property (nonatomic) BOOL gps_status;
+@property (nonatomic) BOOL location_permission;
+@property (nonatomic) BOOL battery_status;
+@property (nonatomic) BOOL airplane_mode;
+@property (nonatomic) BOOL battery_saver;
+@property (nonatomic) BOOL battery_remaining;
+@property (nonatomic) BOOL device_model;
+@property (nonatomic) BOOL device_manufacturer;
+@property (nonatomic) BOOL os_version;
+@property (nonatomic) BOOL tracking_mode;
+@property (nonatomic) BOOL altitude;
+@property (nonatomic) BOOL speed;
+@property (nonatomic) BOOL vertical_accuracy;
+@property (nonatomic) BOOL horizontal_accuracy;
+@property (nonatomic) BOOL course;
+@property (nonatomic) BOOL activity;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, GeoSparkSubscribe, open) {
+  GeoSparkSubscribeBoth = 0,
+  GeoSparkSubscribeLocation = 1,
+  GeoSparkSubscribeEvents = 2,
+};
+
+
 SWIFT_CLASS("_TtC8GeoSpark29GeoSparkTrackingCustomMethods")
 @interface GeoSparkTrackingCustomMethods : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -423,7 +464,7 @@ SWIFT_CLASS("_TtC8GeoSpark40GeoSparkTrackingCustomMethodsObjcWrapper")
 
 typedef SWIFT_ENUM(NSInteger, GeoSparkTrackingMode, open) {
   GeoSparkTrackingModePassive = 0,
-  GeoSparkTrackingModeReactive = 1,
+  GeoSparkTrackingModeBalanced = 1,
   GeoSparkTrackingModeActive = 2,
   GeoSparkTrackingModeCustom = 3,
 };
@@ -675,16 +716,6 @@ SWIFT_CLASS_NAMED("MyTripRoute")
 @property (nonatomic, strong) MyTrip * _Nullable trip;
 @end
 
-
-
-SWIFT_CLASS("_TtC8GeoSpark11ShadowState")
-@interface ShadowState : NSObject
-@property (nonatomic, copy) NSString * _Nullable welcome;
-@property (nonatomic, strong) NSNumber * _Nullable location_tracking;
-@property (nonatomic, strong) NSNumber * _Nullable pub_sub;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 
 SWIFT_CLASS_NAMED("TripEventsLocal")
