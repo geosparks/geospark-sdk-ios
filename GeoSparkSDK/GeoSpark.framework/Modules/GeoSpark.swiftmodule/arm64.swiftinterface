@@ -169,6 +169,7 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   public var pausesLocationUpdatesAutomatically: Swift.Bool?
   public var useStandardLocationServices: Swift.Bool?
   public var accuracyFilter: Swift.Int?
+  public var updateInterval: Swift.Int?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -187,7 +188,7 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   @objc public var distanceCovered: Foundation.NSNumber
   @objc public var duration: Foundation.NSNumber
   @objc public var projectId: Swift.String!
-  @objc public var route: [GeoSpark.MotionTripSummaryRoute]!
+  @objc public var route: [GeoSpark.GeoSparkTripSummaryRoute]!
   @objc public var tripId: Swift.String!
   @objc public var tripStatus: Swift.String!
   @objc public var userId: Swift.String!
@@ -216,6 +217,14 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   @objc public var tripTrackingUrl: Swift.String!
   @objc public var updatedAt: Swift.String!
   @objc public var userId: Swift.String!
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class GeoSparkTripSummaryRoute : ObjectiveC.NSObject {
+  @objc public var activity: Swift.String!
+  @objc public var altitude: Foundation.NSNumber!
+  @objc public var coordinates: [Swift.Double]!
+  @objc public var recordedAt: Swift.String!
   @objc deinit
   @objc override dynamic public init()
 }
@@ -504,14 +513,6 @@ extension UIDevice {
   public var type: GeoSpark.Model {
     get
   }
-}
-@_hasMissingDesignatedInitializers @objc public class MotionTripSummaryRoute : ObjectiveC.NSObject {
-  @objc public var activity: Swift.String!
-  @objc public var altitude: Foundation.NSNumber!
-  @objc public var coordinates: [Swift.Double]!
-  @objc public var recordedAt: Swift.String!
-  @objc deinit
-  @objc override dynamic public init()
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkLocationReceived : ObjectiveC.NSObject {
   @objc public var activity: Swift.String!
