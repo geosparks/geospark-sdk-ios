@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name GeoSpark
 import AWSCore
 import AWSIoT
@@ -21,8 +21,8 @@ import UserNotifications
   @objc final public let location: CoreLocation.CLLocation
   @objc final public let timezoneOffset: Swift.String?
   @objc final public let recordedAt: Swift.String?
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkTripOrigin : ObjectiveC.NSObject {
   @objc public var coordinates: [Swift.Double]!
@@ -32,8 +32,8 @@ import UserNotifications
   @objc public var reached: Swift.Bool
   @objc public var tripId: Swift.String!
   @objc public var updatedAt: Swift.String!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkTripListener : ObjectiveC.NSObject {
   @objc final public let tripId: Swift.String
@@ -41,8 +41,8 @@ import UserNotifications
   @objc final public let distance: Swift.Double
   @objc final public let duration: Swift.Double
   @objc final public let startedTime: Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkUser : ObjectiveC.NSObject {
   @objc final public let userId: Swift.String
@@ -75,8 +75,8 @@ import UserNotifications
   @objc public var tripStartedAt: Swift.String!
   @objc public var updatedAt: Swift.String!
   @objc public var userId: Swift.String!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class GeoSpark : ObjectiveC.NSObject {
   @objc public static var delegate: GeoSpark.GeoSparkDelegate! {
@@ -128,8 +128,8 @@ import UserNotifications
   @objc public static func subscribe(_ type: GeoSpark.GeoSparkSubscribe, _ userId: Swift.String)
   @objc public static func unsubscribe(_ type: GeoSpark.GeoSparkSubscribe, _ userId: Swift.String)
   @objc public static func stopPublishing()
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public typealias GeoSparkUserCompletionhandler = ((GeoSpark.GeoSparkUser?, GeoSpark.GeoSparkError?) -> Swift.Void)
 public typealias GeoSparkLogoutCompletionhandler = ((Swift.String?, GeoSpark.GeoSparkError?) -> Swift.Void)
@@ -148,8 +148,8 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   case kCLLocationAccuracyHundredMeters
   case kCLLocationAccuracyKilometer
   case kCLLocationAccuracyThreeKilometers
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -181,8 +181,8 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   @objc public var reached: Swift.Bool
   @objc public var tripId: Swift.String!
   @objc public var updatedAt: Swift.String!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkTripSummary : ObjectiveC.NSObject {
   @objc public var distanceCovered: Foundation.NSNumber
@@ -192,8 +192,9 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   @objc public var tripId: Swift.String!
   @objc public var tripStatus: Swift.String!
   @objc public var userId: Swift.String!
-  @objc deinit
+  @objc public var totalElevationGain: Foundation.NSNumber
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkTripEvent : ObjectiveC.NSObject {
   @objc public var createdAt: Swift.String!
@@ -203,8 +204,8 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   @objc public var tripId: Swift.String!
   @objc public var userId: Swift.String!
   @objc public var userLocationId: Swift.String!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkCreateTrip : ObjectiveC.NSObject {
   @objc public var createdAt: Swift.String!
@@ -217,16 +218,19 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   @objc public var tripTrackingUrl: Swift.String!
   @objc public var updatedAt: Swift.String!
   @objc public var userId: Swift.String!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkTripSummaryRoute : ObjectiveC.NSObject {
   @objc public var activity: Swift.String!
-  @objc public var altitude: Foundation.NSNumber!
+  @objc public var altitude: Foundation.NSNumber
+  @objc public var elevationGain: Foundation.NSNumber
+  @objc public var distance: Foundation.NSNumber
+  @objc public var duration: Foundation.NSNumber
   @objc public var coordinates: [Swift.Double]!
   @objc public var recordedAt: Swift.String!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkTrip : ObjectiveC.NSObject {
   @objc public var tripId: Swift.String!
@@ -237,16 +241,16 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   @objc public var updatedAt: Swift.String!
   @objc public var createdAt: Swift.String!
   @objc public var syncStatus: Swift.String!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public enum GeoSparkTrackingMode : Swift.Int {
   case passive = 0
   case balanced
   case active
   case custom
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -255,8 +259,8 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   case AlwaysOn = 0
   case Foreground
   case Background
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -265,8 +269,8 @@ public typealias GeoSparkDeleteTripCompletionhandler = ((Swift.String?, GeoSpark
   case Both
   case Location
   case Events
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -302,10 +306,10 @@ public class Reachability {
       get
     }
     public static func == (a: GeoSpark.Reachability.NetworkStatus, b: GeoSpark.Reachability.NetworkStatus) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum Connection : Swift.CustomStringConvertible {
     @available(*, deprecated, renamed: "unavailable")
@@ -317,10 +321,10 @@ public class Reachability {
       get
     }
     public static func == (a: GeoSpark.Reachability.Connection, b: GeoSpark.Reachability.Connection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public var whenReachable: GeoSpark.Reachability.NetworkReachable?
   public var whenUnreachable: GeoSpark.Reachability.NetworkUnreachable?
@@ -393,8 +397,8 @@ extension Reachability {
   @objc public var horizontal_accuracy: Swift.Bool
   @objc public var course: Swift.Bool
   @objc public var activity: Swift.Bool
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkEvents : ObjectiveC.NSObject {
   @objc public var activity: Swift.String?
@@ -427,8 +431,8 @@ extension Reachability {
   @objc final public let pace: Swift.Double
   @objc final public let latitude: Swift.Double
   @objc final public let longitude: Swift.Double
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public enum Model : Swift.String {
   case simulator
@@ -503,8 +507,8 @@ public enum Model : Swift.String {
   case AppleTV4
   case AppleTV_4K
   case unrecognized
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -529,14 +533,14 @@ extension UIDevice {
   @objc public var speed: Foundation.NSNumber!
   @objc public var userId: Swift.String!
   @objc public var verticalAccuracy: Foundation.NSNumber!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class GeoSparkError : ObjectiveC.NSObject {
   @objc final public let code: Swift.String?
   @objc final public let message: Swift.String?
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class GeoSparkTrackingCustomMethodsObjcWrapper : ObjectiveC.NSObject {
   @objc final public let customMethods: GeoSpark.GeoSparkTrackingCustomMethods
@@ -545,8 +549,8 @@ extension UIDevice {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(HttpLocationData) public class HttpLocationData : CoreData.NSManagedObject {
-  @objc deinit
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
 }
 extension HttpLocationData {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<GeoSpark.HttpLocationData>
@@ -628,8 +632,8 @@ extension HttpLocationData {
   }
 }
 @_inheritsConvenienceInitializers @objc(MqttLocationData) public class MqttLocationData : CoreData.NSManagedObject {
-  @objc deinit
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
 }
 extension MqttLocationData {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<GeoSpark.MqttLocationData>
@@ -755,8 +759,8 @@ extension MqttLocationData {
   }
 }
 @_inheritsConvenienceInitializers @objc(MyTrip) public class MyTrip : CoreData.NSManagedObject {
-  @objc deinit
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
 }
 extension MyTrip {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<GeoSpark.MyTrip>
@@ -812,8 +816,8 @@ extension MyTrip {
   @objc(removeRoute:) @NSManaged dynamic public func removeFromRoute(_ values: Foundation.NSSet)
 }
 @_inheritsConvenienceInitializers @objc(MyTripRoute) public class MyTripRoute : CoreData.NSManagedObject {
-  @objc deinit
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
 }
 extension MyTripRoute {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<GeoSpark.MyTripRoute>
@@ -851,8 +855,8 @@ extension MyTripRoute {
   }
 }
 @_inheritsConvenienceInitializers @objc(TripEventsLocal) public class TripEventsLocal : CoreData.NSManagedObject {
-  @objc deinit
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
 }
 extension TripEventsLocal {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<GeoSpark.TripEventsLocal>
@@ -894,8 +898,8 @@ extension TripEventsLocal {
   }
 }
 @_inheritsConvenienceInitializers @objc(TripsLocal) public class TripsLocal : CoreData.NSManagedObject {
-  @objc deinit
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
 }
 extension TripsLocal {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<GeoSpark.TripsLocal>
